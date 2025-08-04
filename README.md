@@ -1,6 +1,6 @@
 # Sleep Data Analysis
 
-This project performs an exploratory data analysis on sleep data exported from Apple Health.
+This project performs an exploratory data analysis on my personal sleep data exported from Apple Health.
 
 ## Goals
 
