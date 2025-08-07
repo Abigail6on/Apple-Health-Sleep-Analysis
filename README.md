@@ -1,54 +1,43 @@
-# Sleep Data Analysis
+# Health Data Analysis and Modeling
 
-This project performs an exploratory data analysis on my personal sleep data exported from Apple Health.
+This repository contains a Google Colab notebook that performs analysis and builds machine learning models on health data. The project focuses on predicting key health metrics and classifying walking steadiness based on various health indicators.
 
-## Goals
+## Project Overview
 
-The main goals of this analysis are to:
-- Explore the distribution and duration of different sleep stages.
-- Analyze daily total sleep duration and identify potential outliers.
-- Investigate monthly and seasonal sleep patterns.
-- Examine the consistency of bedtime and the timing of key sleep stages (Deep and REM).
-- Explore potential correlations between sleep duration and other health metrics like heart rate, step count, and active energy burned.
+The goal of this project is to explore a dataset containing daily health information and apply regression and classification techniques to understand the relationships between different health metrics and predict certain outcomes.
 
-## Data Overview
+## Data
 
-The data used in this project is sourced from an Apple Health export. It includes records related to sleep analysis, heart rate, step count, active energy burned, resting heart rate, and heart rate variability (SDNN).
+The analysis is based on **personal health data exported from Apple Health**. The data is loaded from CSV files. The primary data source used for modeling is the `cleaned_daily_health_data` which includes various health metrics such as step count, heart rate, distance, walking speed, physical effort, and walking steadiness.
 
-**Please note:** The original `export.xml` file containing personal health data is **not** included in this repository for privacy reasons.
+## Modeling Tasks
 
-## Key Findings
+The notebook performs the following modeling tasks:
 
-Based on the exploratory data analysis of the Apple Watch sleep data from 2024 onwards, here is a summary of the key findings:
+1.  **Predicting Active Energy Burned (Regression)**:
+    *   **Target**: Active Energy Burned
+    *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort
+    *   **Models**: Linear Regression, Random Forest, XGBoost
+    *   **Key Finding**: The Linear Regression model performed best for this task, achieving an R² of 0.8157, indicating a strong ability to explain the variance in Active Energy Burned.
+2.  **Predicting Walking Speed (Regression)**:
+    *   **Target**: Walking Speed
+    *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday
+    *   **Models**: Linear Regression, Random Forest, XGBoost
+    *   **Key Finding**: The Random Forest model was the best performer for predicting Walking Speed with an R² of 0.8212 and the lowest MAE and RMSE.
+3.  **Classifying Apple Walking Steadiness (Classification)**:
+    *   **Target**: Walking Steadiness (Binarized into 'Low Steadiness' and 'High Steadiness')
+    *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday
+    *   **Models**: Logistic Regression, Random Forest, XGBoost
+    *   **Key Finding**: Based on ROC AUC and F1-score, the Random Forest model showed relatively better performance for classifying Walking Steadiness, although overall classification performance was moderate, likely due to class imbalance.
 
-*   **Sleep Stage Distribution:** The analysis of my sleep stage counts and average durations shows the proportion of time I spent in different sleep stages (Core, REM, Deep, Awake, In Bed). I observed the average duration for each stage, with 'In Bed' having the longest average duration, followed by Core, REM, Deep, and Awake.
-*   **Daily Sleep Duration:** Visualizing my daily total sleep duration (excluding 'In Bed') revealed the overall trend and variability in my sleep time from night to night.
-*   **Outlier Detection:** The box plot and histogram of my daily sleep duration helped in understanding the distribution of my sleep times and identifying potential outliers, which represent unusually short or long sleep nights for me.
-*   **Monthly and Seasonal Patterns:** Analyzing the monthly average duration of my sleep stages and comparing my sleep patterns between summer and winter provided insights into potential seasonal influences on my sleep.
-*   **Sleep Consistency:** Visualizing the distribution of my bedtime with an adjusted timeline showed the consistency of my sleep starting times.
-*   **Timing of Sleep Stages:** The adjusted timeline histograms for Deep and REM sleep start times illustrated when these crucial sleep stages typically began during my sleep sessions.
-*   **Correlations with Other Factors:** The expanded correlation heatmap showed the linear relationships between my daily sleep duration and other health metrics like my average heart rate, total step count, total active energy burned, average resting heart rate, and average HRV SDNN. I observed relatively weak linear correlations between my sleep duration and these activity/physiological metrics in this dataset.
+## Notebook Structure
 
-These findings provide a good foundation for understanding my sleep patterns and how they relate to other aspects of my health data. Further analysis could delve deeper into specific periods, investigate the identified outliers, or explore non-linear relationships between the factors.
+The notebook is organized into sections for data loading, feature engineering, and separate sections for each modeling task including data preparation, model training, evaluation, comparison, and visualization.
 
-## How to View and Run the Analysis
+## How to Use
 
-You can explore this analysis in a few ways:
+1.  Clone this repository to your local machine or open the notebook directly in Google Colab.
+2.  Ensure you have the necessary CSV data files in the specified directory (or update the data loading path). **Note: This analysis uses personal health data exported from Apple Health.**
+3.  Run the cells sequentially to reproduce the analysis and modeling results.
 
-1.  **View on GitHub:** The most straightforward way is to view the `Sleep_Data_Analysis.ipynb` notebook directly on GitHub. The rendered notebook will show the code, outputs, and visualizations.
-2.  **Open in Google Colab:** Click the "Open in Colab" badge at the top of the notebook file on GitHub to open and run the notebook interactively in Google Colab.
-3.  **Run Locally with Jupyter Notebook:**
-    *   Clone this repository to your local machine.
-    *   Make sure you have Jupyter Notebook installed (`pip install notebook`).
-    *   Install the required dependencies (see Dependencies below).
-    *   Place your `export.xml` file (if you have one) in the project directory.
-    *   Open a terminal in the project directory and run `jupyter notebook`.
-    *   Open the `Sleep_Data_Analysis.ipynb` file in your browser.
-
-## Dependencies
-
-The required dependencies for this project are listed in the `requirements.txt` file. You can install them using pip:
-
-```bash
-pip install -r requirements.txt
-```
+Feel free to explore the code, modify the models, or perform further analysis on the data. I will be constantly updating this project for practice.
