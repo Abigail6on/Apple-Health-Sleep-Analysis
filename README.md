@@ -29,6 +29,18 @@ The notebook performs the following modeling tasks:
     *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday
     *   **Models**: Logistic Regression, Random Forest, XGBoost
     *   **Key Finding**: Based on ROC AUC and F1-score, the Random Forest model showed relatively better performance for classifying Walking Steadiness, although overall classification performance was moderate, likely due to class imbalance.
+4.  **Classifying Active vs. Sedentary Days (Classification)**:
+    *   **Target**: Activity Level (Binarized into 'Sedentary' and 'Active' based on ActiveEnergyBurned or StepCount)
+    *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort
+    *   **Models**: Logistic Regression, Random Forest, XGBoost
+    *   **Metrics**: Accuracy, Precision, Recall, F1-score, ROC AUC
+    *   **Visual**: Confusion Matrix
+    *   **Key Finding**: The Random Forest model demonstrated the best overall performance for classifying Active vs. Sedentary days, with the highest Accuracy (0.8152), F1-score (0.8251), and ROC AUC (0.8948), indicating a good balance of precision and recall and overall ability to distinguish between the two classes.
+5.  **Classifying Stress Levels (Classification)**:
+    *   **Target**: Stress Level (Binarized into 'Low Stress' and 'High Stress' based on HeartRateVariabilitySDNN)
+    *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday, Apple Sleeping Breathing Disturbances
+    *   **Models**: Logistic Regression, Random Forest, XGBoost
+    *   **Key Finding**: The Random Forest model performed best for classifying High Stress vs. Low Stress days, achieving the highest ROC AUC (0.7621) and F1-score (0.6304), indicating a better ability to distinguish between the two classes compared to the other models.
 
 ## Notebook Structure
 
