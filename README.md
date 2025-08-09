@@ -24,7 +24,7 @@ The notebook performs the following modeling tasks:
     *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday
     *   **Models**: Linear Regression, Random Forest, XGBoost
     *   **Key Finding**: The Random Forest model was the best performer for predicting Walking Speed with an R² of 0.8212 and the lowest MAE and RMSE.
-3.  **Classifying Apple Walking Steadiness (Classification)**:
+3.  **Classifying Walking Steadiness (Classification)**:
     *   **Target**: Walking Steadiness (Binarized into 'Low Steadiness' and 'High Steadiness')
     *   **Features**: Step Count, Heart Rate, Distance Walking Running, Walking Speed, Walking Step Length, Physical Effort, Walking Heart Rate Average, Walking Asymmetry Percentage, Walking Double Support Percentage, Stair Ascent Speed, Stair Descent Speed, Weekday
     *   **Models**: Logistic Regression, Random Forest, XGBoost
