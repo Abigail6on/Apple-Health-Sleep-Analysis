@@ -12,7 +12,7 @@ The analysis is based on **personal health data exported from Apple Health**. Th
 
 ## Modeling Tasks
 
-The notebook performs the following modeling tasks:
+The notebook (health_data_modeling.ipynb) performs the following modeling tasks:
 
 1.  **Predicting Active Energy Burned (Regression)**:
     *   **Target**: Active Energy Burned
