@@ -12,7 +12,8 @@ All code and analysis are updated regularly as part of my **continuous learning 
 
 ## Key Modeling Tasks
 Each task includes:
-- Data preparation  
+- Data preparation
+- Exploratory data analysis
 - Model training (Linear Regression, Random Forest, XGBoost)  
 - Evaluation and comparison
 
@@ -48,7 +49,7 @@ Each task includes:
 
 ## How to Run
 1. Clone the repo or open in **Google Colab**
-2. Ensure your **cleaned health data CSV** (e.g., `cleaned_daily_health_data.csv`) is in the correct folder
+2. Ensure your **cleaned health data CSV** is in the correct folder
 3. Open and run the notebooks in order — starting with EDA, then modeling
 
 > **Note**: All personal data is anonymized or aggregated to protect privacy. Raw Apple Health export files are **not included**.
