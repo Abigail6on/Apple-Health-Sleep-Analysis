@@ -1,6 +1,6 @@
 # Apple-Health-Sleep-Analysis
 
-**An evolving data science project analyzing personal health data from Apple Health — showcasing exploratory data analysis (EDA), predictive modeling, and continuous learning.**
+**An evolving data analysis project analyzing personal health data from Apple Health — showcasing exploratory data analysis (EDA), predictive modeling, and continuous learning.**
 
 ---
 
